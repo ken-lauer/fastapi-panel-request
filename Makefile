@@ -8,7 +8,7 @@ build:
 	docker build -t panel-docker:latest .
 
 run:
-	docker run --publish 8882:8080 --env .env -it panel-docker:latest
+	docker run --publish 8882:8080 --env-file .env -it panel-docker:latest
 
 dev:
 	fastapi dev --port 8882 src/main.py --root-path $(ROOT_PATH)

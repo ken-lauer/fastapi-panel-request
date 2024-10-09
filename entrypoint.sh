@@ -4,4 +4,8 @@ conda activate panel
 
 cd /app/src
 
-fastapi run --port 8080 main.py
+ROOT_PATH=${ROOT_PATH:-}
+
+echo "Root path: $ROOT_PATH"
+
+fastapi run --port 8080 --root-path="${ROOT_PATH}" main.py
